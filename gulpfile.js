@@ -33,7 +33,11 @@ gulp.task("watchall",async ()=>{  //拷贝html
 		gulp.src("sass/**/*")
 		.pipe(sass())
 		.pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
-	})
+	});
+	gulp.watch("*.php",async ()=>{  //监听当前文件夹下的所有html文件
+		gulp.src("*.php")
+		.pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS"));
+	});
 });
 
 //拷贝图片
