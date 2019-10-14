@@ -3,6 +3,8 @@ const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const rename = require("gulp-rename");
 const minifycss = require("gulp-minify-css");
+const sass = require("gulp-sass");
+
 gulp.task("watchall",async ()=>{  //拷贝html
 	gulp.watch("*.html",async ()=>{  //监听当前文件夹下的所有html文件
 		gulp.src("*.html")
@@ -26,7 +28,12 @@ gulp.task("watchall",async ()=>{  //拷贝html
         gulp.src("css/*.css")
         .pipe(minifycss())
         .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
-    });
+	});
+	gulp.watch("sass/**/*",async()=>{
+		gulp.src("sass/**/*")
+		.pipe(sass())
+		.pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
+	})
 });
 
 //拷贝图片

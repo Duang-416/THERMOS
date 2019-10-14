@@ -108,23 +108,28 @@ html,body{font-size:16px;}
 .in_border{
 	position: absolute;
 	left: 254px;
-	top: 26px;
+	top: 16px;
 }
 .in_border .outerbox{
 	width: 324px;
     height: 191px;
 	/* background:red; */
-	position: absolute;
-	/* top: 100px;
+	/*position: absolute;
+	 top: 100px;
 	left: 100px; */
 	margin: 0 auto;
-	border: 3px solid #fff8ee;
+	border: 2px solid #fff8ee;
 	background: rgba(0,0,180,0);
+}
+#gifbox{
+	position: absolute;
+	left:2px;
+	top:0px;
 }
 .in_border .info{
 	position: absolute; /* 相对于有父类定位属性的元素*/
-	left: 8px;
-	top: 8px;
+	left: 10px;
+	top: 10px;
 	width: 300px;
 	height: 167px;
 	background-color: #fff8ee;
