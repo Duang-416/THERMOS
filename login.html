@@ -13,7 +13,7 @@
 		</div>
 		<div class="menu">
 			<a href="index.html" class="firstA">首页</a>
-			<a href="#">产品</a>
+			<a href="goods.html">产品</a>
 			<a href="shop.html">店铺</a>
 			<a href="#">服务</a>
 			<a href="#">品牌</a>
@@ -73,7 +73,7 @@
 				if(xhr.responseText=="1"){
 					location.href="index.html";
 				}else{
-					$("span").innerHTML = "亲，用户名或者密码不对（是否注册？）";
+					$("#userpass").lastChild.innerHTML = "亲，用户名或者密码不对（是否注册？）";
 				}
 			}
 		}

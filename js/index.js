@@ -1,7 +1,7 @@
 //顶部悬浮
 window.onscroll=function(){
     var topScroll = get_scrollTop_of_body();//滚动的距离,距离顶部的距离
-    var bignav = document.getElementById("header");//获取到导航栏id
+    var bignav =document.getElementById("header");//获取到导航栏id
     if(topScroll > 600){ //当滚动距离大于250px时执行下面的东西
       bignav.style.position = 'fixed';
       bignav.style.top = '0';
@@ -51,14 +51,12 @@ $(function(){
       }
     });*/
 
-
-	// 改变src属性-->动态图
-/*	$('#st_box').hover(function(){      //滑入
-		src = $(this).find('img').attr('data-hover');
-		$(this).find('img').attr('src') = src;
-	},function(){                      //滑出
-		src = $(this).find('img').attr('data-img');
-		$(this).find('img').attr('src') = src;
-	});*/
-
+// 改变src属性-->动态图
+$('#st_box li').hover(function(){      //滑入
+      let src = $(this).find('img').attr('data-hover');
+      $(this).find('img').attr('src', src);
+    },function(){                      //滑出
+      let src = $(this).find('img').attr('data-img');
+      $(this).find('img').attr('src',src);
+    });
 });

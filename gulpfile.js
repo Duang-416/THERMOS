@@ -12,7 +12,7 @@ gulp.task("watchall",async ()=>{  //拷贝html
 	});
     gulp.watch("js/*.js",async ()=>{ //拷贝js
         gulp.src("js/*.js")
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\js"));
     });
     //concat合并文件夹，并压缩，并且重命名
@@ -20,18 +20,19 @@ gulp.task("watchall",async ()=>{  //拷贝html
 		gulp.src(["js/index.js","js/jsAddress.js"])
 		.pipe(concat("conmon.js"))
 		.pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\js"))
-		.pipe(uglify())
+		// .pipe(uglify())
         .pipe(rename("common.min.js"))
         .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\js"))
 	});
-	gulp.watch("css/*.css",async ()=>{
-        gulp.src("css/*.css")
-        .pipe(minifycss())
-        .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
-	});
+	// gulp.watch("css/*.css",async ()=>{
+    //     gulp.src("css/*.css")
+    //     .pipe(minifycss())
+    //     .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
+	// });
 	gulp.watch("sass/**/*",async()=>{
 		gulp.src("sass/**/*")
 		.pipe(sass())
+		.pipe(minifycss())
 		.pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
 	});
 	gulp.watch("*.php",async ()=>{  //监听当前文件夹下的所有html文件

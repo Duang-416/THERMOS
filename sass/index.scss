@@ -268,12 +268,15 @@ html,body{font-size:16px;}
 	text-align: center;
 	padding-top: 20px;
 }
-.st_box a{
+#st_box li{
+	float: left;
+}
+#st_box li a{
 	float: left;
 	position: relative;
 	padding-bottom: 2.5rem;
 }
-.st_box p{
+#st_box li p{
 	position: absolute;
     width: 100%;
     text-align: center;
