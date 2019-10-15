@@ -11,7 +11,6 @@ var addressInit = function(_cmbProvince, _cmbCity, _cmbArea, defaultProvince, de
 			}
 		}
 	}
-
 	function cmbAddOption(cmb, str, obj) {
 		var option = document.createElement("OPTION");
 		cmb.options.add(option);

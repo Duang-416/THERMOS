@@ -23,7 +23,15 @@
 			<input type="text" value placeholder="搜索产品/食谱">
 			<a href="#"><img src="img/icon_search.png" alt=" "></a>
 		</div>
-		<div class="userLogout">
+		<div id="userlogin" style="display: none;">
+			<a>
+				<div class="user_pic">
+					<img src="img/user_pic.png" alt="用户 ">
+				</div>
+				<span id="user">13389251547</span>		
+			</a>
+		</div>
+		<div class="userLogout" style="display: block;">
 			<a href="#">登录/注册</a>
 		</div>
 	</div>
@@ -65,7 +73,7 @@
 				if(xhr.responseText=="1"){
 					location.href="index.html";
 				}else{
-					$("span").text() = "亲，用户名或者密码不对";
+					$("span").innerHTML = "亲，用户名或者密码不对（是否注册？）";
 				}
 			}
 		}
@@ -73,4 +81,14 @@
 		let sendstr = `username=${$("#username").value}&userpass=${$("#userpass").value}`;
 		xhr.send(sendstr);
 	}
+function $(str){
+	if(str.charAt(0)=="#"){
+		return document.getElementById(str.substring(1));
+	}else if(str.charAt(0)=="."){
+		return document.getElementsByClassName(str.substring(1));
+	}else{
+		return document.getElementsByTagName(str);
+	}
+}	
+
 </script>
