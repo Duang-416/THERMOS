@@ -43,19 +43,22 @@
 					<span>登录</span>
 				</div>
 				<div class="inner">
-					<div class="box1">
-						<input id="username" type="text" placeholder="请输入手机号">
-						<span>*</span>
-					</div>
-					<div class="box1">
-						<input id="userpass" type="password" placeholder="请输入密码">
-						<span>*</span>
-					</div>
-					<input id="btnLogin" type="button" value="登录">
-					<div class="foo">
-						<a href="#" id="passMiss">忘记密码</a>
-						<a href="register.html" id="regist">立即注册>></a>
-					</div>
+					<form action="index.html" method="get">	
+						<div class="box1">
+							<input id="username" type="text" placeholder="请输入手机号">
+							<span>*</span>
+						</div>
+						<div class="box1">
+							<input id="userpass" type="password" placeholder="请输入密码">
+							<span>*</span>
+						</div>
+						<input id="btnLogin" type="button" value="登录">
+						<div class="foo">
+							<input name="saveNP" type="checkbox" class="checkbox" />
+							<label>7天内免登陆</label>
+							<a href="register.html" id="regist">立即注册>></a>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -63,32 +66,5 @@
 </body>
 </html>
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<!-- <script src="js/index.js"></script> -->
-<script>
-	$("#btnLogin").onclick = function(){
-		let xhr = new XMLHttpRequest();
-		xhr.open("post","loginCheck.php",true);
-		xhr.onreadystatechange = function(){
-			if(xhr.readyState==4 && xhr.status==200){
-				if(xhr.responseText=="1"){
-					location.href="index.html";
-				}else{
-					$("#userpass").lastChild.innerHTML = "亲，用户名或者密码不对（是否注册？）";
-				}
-			}
-		}
-		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		let sendstr = `username=${$("#username").value}&userpass=${$("#userpass").value}`;
-		xhr.send(sendstr);
-	}
-function $(str){
-	if(str.charAt(0)=="#"){
-		return document.getElementById(str.substring(1));
-	}else if(str.charAt(0)=="."){
-		return document.getElementsByClassName(str.substring(1));
-	}else{
-		return document.getElementsByTagName(str);
-	}
-}	
-
-</script>
+<script src="js/cookieTools.js"></script>
+<script src="js/index.js"></script>

@@ -24,9 +24,9 @@
         mysql_close($conn);
 
         if($rows>0){
-            echo "亲，该用户名已经被别人使用，请重新思考";
+            echo "-1";
         }else{
-            echo "亲，该用户名没有人使用";
+            echo "1";
         }
     }
 ?>

@@ -43,25 +43,23 @@
 					<span>注册</span>
 				</div>
 				<div class="inner">
-					<!-- <form action="regSave.php" method="POST" > -->
-						<div class="box1">	
-							<input name="username" id="username" type="text" placeholder="请输入账号" onblur="checkuser(this)">
-							<span>*</span>
-							<img id="loadImg" src="img/loading01.gif" style="display: none;width:15px;height: 15px;" alt="">
-						</div>
-						<div class="box1">
-							<input name="userpass" id="userpass" type="password" placeholder="请输入密码">
-							<span>*</span>
-						</div>
-						<div class="box1">
-							<input id="checkpass" type="password" placeholder="重复密码">
-							<span>*</span>
-						</div>
-						<div id="messageBox">
+					<div class="box1">	
+						<input name="username" id="username" type="text" placeholder="请输入账号">
+						<span>*</span>
+						<img id="loadImg" src="img/loading01.gif" style="display: none;width:15px;height: 15px;" alt="">
+					</div>
+					<div class="box1">
+						<input name="userpass" id="userpass" type="password" placeholder="请输入密码">
+						<span>*</span>
+					</div>
+					<div class="box1">
+						<input id="checkpass" type="password" placeholder="重复密码">
+						<span>*</span>
+					</div>
+					<div id="messageBox">
 
-						</div>
-						<input id="btnLogin" type="submit" value="注册" onsubmit="return check()">
-					<!-- </form> -->
+					</div>
+					<input id="btnRegister" type="submit" value="注册" >
 					<div class="foo">
 						<a href="login.html" id="passMiss">上一步</a>
 					</div>
@@ -74,86 +72,4 @@
 </body>
 </html>
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-
-<script>
-	//输入合法性判断
-	function check(){
-		//非空判断
-		if($("#username").value=="" || $("#userpass").value=="" || $("#checkpass").value==""){
-			alert("带星号的为必填项。");
-			return false;  //阻止浏览器的默认行为
-		}else{
-			//判断用户名是否符合规则
-			var str=$("#username").value;
-		    var reg = /^\d{11}$/;
-		    //11位数字
-
-		    if(reg.test(str)==false){
-		        alert("用户名不合法，请重新输入。");
-		    	return false;
-		    	//当出现用户名输入错误时，就不再往后面执行
-		    }
-	    	//判断密码和重复密码是否一致。
-	    	if($("#userpass").value!=$("#checkpass").value){
-	    		alert("两次输入不一致，请重新输入。");
-	    		return false;
-	    	}
-	    }
-	}
-
-	//get方式判断用户名是否存在
-	function checkuser(obj){
-		let xhr =new XMLHttpRequest();
-		xhr.open("get","checkuser.php?username="+$("#username").value,true);
-		xhr.onreadystatechange = function(){
-			if(xhr.readyState==4 && xhr.status==200){
-				obj.nextElementSibling.innerHTML =  xhr.responseText;
-			}
-		}
-		xhr.send();
-	}
-
-	//loading加载图片
-	// $("#username").ajaxSend(function(){
-	// 	$("#username").next().html(""); //清空
-	// 	$("#loadImg").show();
-	// });
-	// $("#username").ajaxComplete(function(){
-	// 	$("#loadImg").hide();
-	// });
-	
-	//点击注册，提交信息
-	$("#btnLogin").onclick = (function(){
-		let xhr = new XMLHttpRequest();
-		xhr.open("post","regSave.php",true);
-		xhr.onreadystatechange = function(){
-			if(xhr.readyState==4 && xhr.status==200){
-				if(xhr.responseText=="-1"){
-					$("#messageBox").style.color ="red";
-					$("#messageBox").innerHTML ="用户名被人使用";
-				}else if(xhr.responseText=="0"){
-					$("#messageBox").style.color ="red";
-					$("#messageBox").innerHTML ="注册失败";
-				}else if(xhr.responseText=="1"){
-					$("#messageBox").style.color ="green";
-					$("#messageBox").innerHTML ="注册成功，点击<a href='login.html'>登录</a>";
-				}
-			}
-		}
-		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		let sendstr = `username=${$("#username").value}&userpass=${$("#userpass").value}`;
-		xhr.send(sendstr);
-	});
-
-
-
-function $(str){
-	if(str.charAt(0)=="#"){
-		return document.getElementById(str.substring(1));
-	}else if(str.charAt(0)=="."){
-		return document.getElementsByClassName(str.substring(1));
-	}else{
-		return document.getElementsByTagName(str);
-	}
-}
-</script>
+<script src="js/register.js"></script>
