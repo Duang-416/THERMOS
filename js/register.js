@@ -59,7 +59,10 @@
               $("#messageBox").html("注册失败");
             }else if(xhr.responseText=="1"){
               $("#messageBox").css("color","green");
-              $("#messageBox").html("注册成功，点击<a href='login.html'>登录</a>");
+              $("#messageBox").html("注册成功!3秒后自动跳转到登录界面。");
+              setTimeout(()=>{
+                 location.href="login.html";
+              },3000);
             }
           }
         }

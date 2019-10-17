@@ -8,25 +8,47 @@
 <body>
 	<!-- header	 -->
 	<div id="header" class="header">
-		<div class="logo">
-			<a href="#"><img src="img/logo.png"></a>
+		<div class="headMain">
+			<div class="logo">
+				<a href="#"><img src="img/logo.png"></a>
+			</div>
+			<div class="menu">
+				<a href="index.html" class="firstA">首页</a>
+				<a href="goods.html">产品</a>
+				<a href="shop.html">店铺</a>
+				<a href="#">服务</a>
+				<a href="#">品牌</a>
+				<a href="#">食谱</a>
+			</div>
+			<div class="search">
+				<input type="text" value placeholder="搜索产品/食谱">
+				<a href="#"><img src="img/icon_search.png" alt=" "></a>
+			</div>
+			<!-- <div id="userlogin">
+				<a>
+					<div class="user_pic">
+						<img src="img/user_pic.png" alt="用户 ">
+					</div>
+					<span id="user"></span>	
+					<input id="btnLogout" type="button" value="注销" />	
+				</a>
+				<div class="more" style="display: none">
+					<a href="#" class="icon .icon-star">我的收藏</a>
+					<a href="#" class="icon .icon-cog">账号设置</a>
+					<a href="#" class="icon .icon-log-out" onclick="logout()">退出</a>
+				</div>
+			</div> -->
+			<div id="userlogin">
+				欢迎您：<span></span>
+				<input id="btnLogout" type="button" value="注销" />
+				<a href="shoppingcar.html"><img src="img/icon.JPG" alt="购物车"></a>
+			</div>
+
+			<div id="userLogout" >
+				<a href="login.html">登录/注册</a>
+			</div>
 		</div>
-		<div class="menu">
-			<a href="index.html">首页</a>
-			<a href="#"  class="firstA">产品</a>
-			<a href="shop.html">店铺</a>
-			<a href="#">服务</a>
-			<a href="#">品牌</a>
-			<a href="#">食谱</a>
-		</div>
-		<div class="search">
-			<input type="text" value placeholder="搜索产品/食谱">
-			<a href="#"><img src="img/icon_search.png" alt=" "></a>
-		</div>
-		<div class="userLogout">
-			<a href="login.html">登录/注册</a>
-		</div>
-    </div>
+	</div>
     <!-- headBox -->
     <div id="headBox">
         <div id="menu2">
@@ -238,7 +260,10 @@
 			</div>
 		</div>
 </div>
+
 </body>
 
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/goods.js"></script>	
+<script src="js/cookieTools.js"></script>
+<script src="js/index.js"></script>

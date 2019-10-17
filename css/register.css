@@ -1,0 +1,246 @@
+@charset "UTF-8";
+body, p, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, hr, td, input, textarea {
+  margin: 0;
+  padding: 0; }
+
+ul, ol, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: none; }
+
+body {
+  font-family: "微软雅黑";
+  /*overflow: hidden; */
+  /*解决idx_story高度塌陷*/ }
+
+/*header*/
+.header {
+  /*width: 1349px;*/
+  height: 60px;
+  display: flex; }
+
+.logo {
+  width: 237px;
+  height: 60px; }
+
+.logo a {
+  padding-left: 71px;
+  width: 120px; }
+
+.menu {
+  width: 559px;
+  height: 60px; }
+
+.menu a {
+  float: left;
+  width: 85px;
+  height: 60px;
+  font-size: 15px;
+  color: #555555;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none; }
+
+.menu .firstA {
+  background-color: #e2001a;
+  color: white; }
+
+.menu a:hover {
+  background-color: #e2001a;
+  color: white;
+  text-decoration: none; }
+
+.search {
+  width: 267px;
+  background-color: #eeeeee; }
+
+.search input {
+  margin-top: 19px;
+  padding-left: 8px;
+  font-size: 15px;
+  border: none;
+  background-color: #eeeeee; }
+
+.search a {
+  float: right; }
+
+/* #userlogin a{
+	padding-top: 10px;
+	padding-left: 20px;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+#userlogin #user{
+	margin: 10px;
+	color: #555555;
+	text-decoration: none;
+} */
+.userLogout a {
+  padding-left: 20px;
+  display: block;
+  width: 219px;
+  text-align: center;
+  line-height: 60px;
+  color: #555555;
+  font-size: 15px;
+  text-decoration: none; }
+
+/*login_content*/
+.content {
+  height: 571px; }
+
+.login_con {
+  height: 547px;
+  background-color: #ececec;
+  border-top: 2px solid #d5d5d5;
+  position: relative; }
+
+.login_con .main {
+  width: 900px;
+  height: 446px;
+  position: absolute;
+  /*已知大小的子元素在父元素中水平垂直居中*/
+  left: 50%;
+  top: 50%;
+  margin-left: -450px;
+  margin-top: -223px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 3px 3px #dfdfdf; }
+
+.main .head {
+  height: 70px;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  line-height: 70px;
+  border-bottom: 1px solid #ebebeb; }
+
+.inner {
+  width: 280px;
+  height: 170px;
+  margin: auto;
+  margin-top: 25px; }
+
+.inner .box1 {
+  display: block;
+  width: 500px;
+  height: 40px;
+  margin-bottom: 10px; }
+
+.inner .box1 span {
+  float: left;
+  color: red; }
+
+#username, #userpass, #checkpass {
+  display: block;
+  width: 276px;
+  height: 36px;
+  float: left; }
+
+#btnRegister {
+  display: block;
+  width: 280px;
+  height: 38px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 38px;
+  background-color: #e3001b;
+  color: white;
+  font-size: 14px;
+  border: none; }
+
+.foo #regist {
+  margin-left: 160px; }
+
+.inner #regist {
+  font-size: 12px;
+  color: gray;
+  text-decoration: none; }
+
+/*footer*/
+.footer {
+  height: 385px; }
+
+.footer .fnav {
+  /*width: 1200px;*/
+  height: 285px;
+  margin: 0 auto;
+  background-color: #c8c8c8; }
+
+.fnav .inner {
+  width: 800px;
+  height: 250px;
+  margin: 0 auto; }
+
+.navs {
+  width: 160px;
+  height: 160px;
+  float: left;
+  line-height: 28px;
+  padding-top: 26px; }
+
+.navs a {
+  text-decoration: none;
+  color: #555555; }
+
+.navs .title {
+  color: #555555;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 36px; }
+
+.service {
+  float: left;
+  padding-top: 20px; }
+
+.service .ttl {
+  width: 117px;
+  height: 33px;
+  font-size: 16px;
+  color: white;
+  background-color: #e2001a;
+  border-radius: 16px;
+  text-align: center;
+  padding: 4px; }
+
+.service .phone {
+  color: #333333;
+  font-weight: bold;
+  line-height: 30px; }
+
+/*copyright*/
+.copyright {
+  height: 100px;
+  background-color: #555555; }
+
+.copyright .inner {
+  width: 1200px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative; }
+
+.jzDiv {
+  width: 627px;
+  height: 80px;
+  margin: auto;
+  padding-top: 10px; }
+
+.copyright a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none; }
+
+.footH {
+  text-align: center; }
+
+.icon a img {
+  display: block;
+  width: 30px;
+  height: 40px;
+  margin: 0 auto; }

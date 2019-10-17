@@ -5,9 +5,6 @@ body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,hr,td,input,textarea{
 ul,ol,li{
 	list-style: none;
 }
-p{
-	display: block;
-}
 a{
 	text-decoration:none;
 }
@@ -15,25 +12,9 @@ img{
 	border:none;
 }
 body{
-	position: relative;
 	font-family: "微软雅黑";
 	/*overflow: hidden; */ /*解决idx_story高度塌陷*/
 }
-html,body {
-    min-height: 100%;
-    font-size:12px; 
-    color:#555;
-}
-@media only screen and (min-width:1200px) and (max-width:1400px){
-html,body{font-size:14px;}
-}
-@media only screen and (min-width:1400px) and (max-width:1600px){
-html,body{font-size:15px;}
-}
-@media only screen and (min-width:1600px){
-html,body{font-size:16px;}
-}
-
 /*header*/
 #header{
 	width: 100%;
@@ -64,10 +45,10 @@ html,body{font-size:16px;}
 	text-align: center;
 	line-height: 60px;
 }
-.menu .firstA{
-	background-color: #e2001a;
-	color: white; 
-}
+// .menu .firstA{
+// 	background-color: #e2001a;
+// 	color: white; 
+// }
 .menu a:hover{
 	background: #e2001a;
 	color: white;
@@ -75,6 +56,7 @@ html,body{font-size:16px;}
 }
 .search{
 	width: 267px;
+	height: 60px;;
 	background-color: #eeeeee;
 }
 .search input{
@@ -92,207 +74,64 @@ html,body{font-size:16px;}
 	display: none;
 }
 #userlogin{
-	padding-top: 15px;
-	width: 265px;
+	padding-top: 10px;
+	width: 270px;
 	height: 40px;
-	// text-align: center;
-	// line-height: 60px;
+	line-height: 40px;
+	// display: flex;
+	// justify-content: space-around;
+	// align-items: center;
+	position: relative;
+	img{
+		position: absolute;
+		top: 14px;
+		right: 0;
+	}
 }
 #userlogin #user{
 	margin: 10px;
 	color: #555555;
 	text-decoration: none;
 }
-#userLogout a{
-	padding-left: 20px;
-	display: block;
-	width: 219px;
-	text-align: center;
-	line-height: 60px;
-	color: #555555;
-	font-size: 15px;
-	text-decoration: none;
-}
 #btnLogout{
 	width: 50px;
 	height: 30px;
 }
-/*index_gif*/
-.index_gif{
-	position: relative;
-}
-.index_gif img{
-	width: 1349px;
-	height: 422px;
-}
-.in_border{
-	position: absolute;
-	left: 254px;
-	top: 16px;
-}
-.in_border .outerbox{
-	width: 324px;
-    height: 191px;
-	/* background:red; */
-	/*position: absolute;
-	 top: 100px;
-	left: 100px; */
-	margin: 0 auto;
-	border: 2px solid #fff8ee;
-	background: rgba(0,0,180,0);
-}
-#gifbox{
-	position: absolute;
-	left:2px;
-	top:0px;
-}
-.in_border .info{
-	position: absolute; /* 相对于有父类定位属性的元素*/
-	left: 10px;
-	top: 10px;
-	width: 300px;
-	height: 167px;
-	background-color: #fff8ee;
-	/* border: 8px solid rgba(123,137,78,0.5); */
-}
-.info .words{
-	padding-top: 16px;
-	color: #6f6e6c;
-	font-size: 24px;
-	text-align: center;
-	line-height: 40px;
-} 
-.in_border .more{
-	position: absolute;
-	left: 54px;
-	top: 225px;
-	display: block;
-	width: 220px;
-	height: 60px;
-	background-color: #e2001a;
-	font-size: 23px;
-	color: white;
-	border-radius: 30px;
-	line-height: 60px;
-	text-align-last: center;
-	text-decoration: none;
-}
-/*goods*/
-.idx_goods .list{
-	float: left;
-	position: relative;
-	overflow: hidden;  /*盒子溢出隐藏*/
-}
-/*因为上一个盒子goods的list元素浮动，
-使story元素高度塌陷解决高度塌陷的方法*/
-.idx_goods:after{  
-	content: " ";
-	display: block;
-	clear: both;
-	/*height: 0;
-	overflow: hidden;
-	visibility: hidden; 前三个属性已经可以解决高度塌陷问题了*/
-}
-.list img{
-	width: 337.25px;
-	height: 337.25px;
-}
-.list .hover{
-	width: 337.25px;
-	height: 337.25px;
-	background-color: #4b7abc; 
-	text-align: center;
-	opacity: 0.9;
-	position: absolute;
-	left: 0;
-	top: 0;
-	transform: translateX(-100%);  /*向左偏移*/
-	transition: all .5s;
-}
-.list:hover .hover{
-	transform: translateX(0);  /*动画效果*/
-}
-.l2 .hover{
-	background-color: #a5ba30;
-}
-.l3 .hover{
-	background-color: #524c46;
-} 
-.l4 .hover{
-	background-color: #8cbfb1;
-}
-.l5 .hover{
-	background-color: #e3b933;
-} 
-.l6 .hover{
-	background-color: #d06f6c;
-} 
-.l7 .hover{
-	background-color: #c3a88c;
-}
-.l8 .hover{
-	background-color: #9c2727;
-}   
-.hover .title{
-	font-size: 22px;
-	color: #f6f8fb;
-	line-height: 37px;
-	padding-top: 80px;
-}
-.hover .infos{
-	font-size: 18px;
-	color: #e8ecf2;
-	line-height: 105px;
-	padding-bottom: 15px;
-}
-.hover a{
-	display: block;
-	width: 105px;
-	height: 25px;
-	background-color: white;
-	font-size: 16px;
-	color: #555555;
-	margin-left: 117px;
-	border-radius: 12.5px;
-	/* vertical-align: middle; */
-	padding: 2px;
-	text-decoration: none;
-}
-.hover a:hover{
-	background-color: #58585a;
-	color: white;
-}
-/*story*/
-.idx_story{
-	width: 1200px;
-	height: 602px;
-	/*background: pink;*/
-	margin: 0 auto;
-}
-.idx_story .title{
-	font-size: 30px;
-	color: #e2001a;
-	line-height: 73px;
-	text-align: center;
-	padding-top: 20px;
-}
-#st_box li{
-	float: left;
-}
-#st_box li a{
-	float: left;
-	position: relative;
-	padding-bottom: 2.5rem;
-}
-#st_box li p{
-	position: absolute;
+// inner
+.goodsInfo{
+	margin-top: 3px;
+	margin-bottom: 3px;
+    color: #333333;
     width: 100%;
-    text-align: center;
-    left: 0;
-    top: 6%;
-    font-size: 18px;
-    color: #555555;
+    height: 200px;
+    box-shadow: 0 -2px 3px gray;
+    background: #dedcdc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+	align-items: center;
+    .addToCar{
+        width:100px;
+        height: 40px;
+        border-style: none;
+        background: #e3001b;
+        border-radius: 10px;
+        color: white;
+    }
 }
+#inner{
+	margin: 1px 0;
+    width:100%;
+    // margin: auto;
+    display: flex;
+    justify-content: center;
+    #imgs{
+        display: block;
+        width: 1000px;
+        height: 500px;
+    }
+}
+
 /*footer*/
 .footer{
 	height: 385px;
@@ -405,7 +244,6 @@ html,body{font-size:16px;}
 .links .more{
 	width: 60px;
 	height: 180px;
-	margin-top: 60px;
 	display: block;
 }
 .links .more li{
@@ -466,3 +304,5 @@ html,body{font-size:16px;}
 .links .more li.mail:hover{
 	background: url(../img/icon_mail.png) no-repeat center #c8c8c8;
 }
+
+  

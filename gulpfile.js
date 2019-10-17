@@ -24,10 +24,10 @@ gulp.task("watchall",async ()=>{  //拷贝html
         .pipe(rename("common.min.js"))
         .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\js"))
 	});
-	// gulp.watch("css/*.css",async ()=>{
-    //     gulp.src("css/*.css")
-    //     .pipe(minifycss())
-    //     .pipe(gulp.dest("D:\\phpStudy\\WWW\\THERMOS\\css"));
+	// gulp.watch("sass/**/*",async()=>{
+	// 	gulp.src("sass/**/*")
+	// 	.pipe(sass())
+	// 	.pipe(gulp.dest("D:\\THERMOS\\css"));
 	// });
 	gulp.watch("sass/**/*",async()=>{
 		gulp.src("sass/**/*")
