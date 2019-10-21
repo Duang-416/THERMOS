@@ -47,10 +47,10 @@
                     <input type="checkbox" name="" id="">
                 </div>
                 <div class="goods">
-                    <img id="goodsImg" src="" alt="">
+                    <img class="goodsImg" src="img/pr22.jpg" alt="">
                 </div>
                 <div class="infos">
-                    <p id="goodsId"></p>
+                    <p class="goodsId">魔法焖烧罐系列 TCLD-720S</p>
                     <div class="box">
                         <p>￥<span class="price">10</span></p> 
                         <span>
@@ -66,10 +66,10 @@
                     <input type="checkbox" name="" id="">
                 </div>
                 <div class="goods">
-                    <img id="goodsImg" src="" alt="">
+                    <img class="goodsImg" src="img/pr23.jpg" alt="">
                 </div>
                 <div class="infos">
-                    <p id="goodsId"></p>
+                    <p class="goodsId">One Touch系列 TCMC-550S</p>
                     <div class="box">
                         <p>￥<span class="price">10</span></p> 
                         <span>
@@ -85,10 +85,10 @@
                     <input type="checkbox" name="" id="">
                 </div>
                 <div class="goods">
-                    <img id="goodsImg" src="" alt="">
+                    <img class="goodsImg" src="img/pr24.jpg" alt="">
                 </div>
                 <div class="infos">
-                    <p id="goodsId"></p>
+                    <p class="goodsId">小哑铃 TCSD-700</p>
                     <div class="box">
                         <p>￥<span class="price">20</span></p> 
                         <span>
@@ -100,13 +100,11 @@
                 </div>
             </li>
         </ul>
+        
     </div class="goodsTotalBox">
-        <input type="checkbox" id="AllcheckBox" style="margin-left: 550px;width: 17px;
+        <input type="checkbox" name="" id="allCheckBox" style="margin-left: 550px;width: 17px;
 		height: 17px;">
-        <label>合计：</label>
-        <span id="totalMoney">
-
-        </span>
+        合计：<span id="totalMoney"></span>
     </div>
 
 <!-- footer -->
@@ -217,6 +215,7 @@
     <ul class="more">
         <li class="phone">
             <div class="info info1">
+
                 <p>欢迎拨打客服电话
                 <br>
                 4008282888</p>
@@ -243,5 +242,39 @@
 <script src="js/cookieTools.js"></script>
 <script src="js/checkbox.js"></script>
 <script src="js/index.js"></script>
+<script>
+    $(function(){
+        $(".btnAdd").click(function(){
+            let $text = $(this).prev();
+            $text.val(parseInt($text.val())+1);
+            calMoney(); //每点一次按钮都计算总价
+        })
+        $(".btnReduce").click(function(){
+            let $text = $(this).next();
+            if($text.val()==0){
+                $text.val()=0;
+            }else{
+                $text.val(parseInt($text.val())-1);
+                calMoney();
+            }
+        });
+        //给全选框绑定全选事件
+        $("#allCheckBox").bindCheckBox($(".goodsList :checkbox"),calMoney);
+    });
+    function calMoney(){
+        let money=0;
+        //循环每个单选框
+        let $subCheckBox = $(".goodsList :checkbox");
+        for(let i=0;i<$subCheckBox.length;i++){
+            if($subCheckBox[i].checked){ 
+                //如果当前选框而被选中,找到当前商品所在li
+                let $goodsBox = $($subCheckBox[i].parentNode.parentNode);
+                //找到goodList中的price*count,计算每个商品的价格后，累加
+                money += parseFloat($goodList.find(".price").html())*parseFloat($goodList.find(".count").val());
+            }
+        }
+        //将加算的价格赋值给计算总价的HTML元素
+        $("#totalMoney").html(money);
+    }
 
-
+</script>
